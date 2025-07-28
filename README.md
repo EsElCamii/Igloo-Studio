@@ -1,5 +1,9 @@
 <h1 align="center">🎨 Igloo Studio</h1>
 
+<div align="center">
+  <img src="https://i.ibb.co/RTdssVzM/Screenshot-2025-07-28-at-3-17-24-p-m.png" alt="Igloo Studio Screenshot" width="800">
+</div>
+
 <p align="center">
   <strong>A modern portfolio and services showcase for creative professionals</strong><br/>
   Designed and developed by <strong>Camilo Quirós Mendoza</strong>
