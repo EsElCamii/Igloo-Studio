@@ -1,6 +1,5 @@
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
-import { Icon } from '@/components/ui/icon';
 
 export default function NotFound() {
   return (
@@ -14,22 +13,25 @@ export default function NotFound() {
         <Link href="/">
           <Button 
             size="lg" 
-            className="bg-blue-600 hover:bg-blue-700 text-white w-full"
+            className="bg-blue-600 hover:bg-blue-700 text-white"
             aria-label="Volver a la página de inicio"
           >
-            <Icon name="home" className="w-5 h-5 mr-2" />
             Volver al inicio
           </Button>
         </Link>
-        <Button 
-          variant="outline" 
-          size="lg" 
-          className="w-full"
-          onClick={() => window.history.back()}
-        >
-          <Icon name="arrow-left" className="w-5 h-5 mr-2" />
-          Página Anterior
-        </Button>
+        <Link href="/#contacto">
+          <Button 
+            variant="outline" 
+            size="lg"
+            className="border-blue-600 text-blue-600 hover:bg-blue-50"
+            aria-label="Contactar a Estudios Igloo"
+          >
+            Contáctanos
+          </Button>
+        </Link>
+      </div>
+      <div className="mt-12 text-sm text-gray-500">
+        <p>¿Necesitas ayuda? <a href="mailto:contacto@estudiosigloo.com" className="text-blue-600 hover:underline">contacto@estudiosigloo.com</a></p>
       </div>
     </div>
   );

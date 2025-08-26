@@ -27,7 +27,7 @@ export default function Navigation() {
     { name: 'Inicio', id: 'inicio' },
     { name: 'Servicios', id: 'servicios' },
     { name: 'Portafolio', id: 'portafolio' },
-    { name: 'Sobre Mí', id: 'sobre-mi' },
+    { name: 'Sobre Nosotros', id: 'sobre-nosotros' },
     { name: 'Contacto', id: 'contacto' },
   ];
 
@@ -64,7 +64,7 @@ export default function Navigation() {
             <Button 
               onClick={() => scrollToSection('contacto')}
               className="ml-4"
-              style={{ backgroundColor: "#007FFF" }}
+              style={{ backgroundColor: "#007FFF", color: "white" }}
             >
               Cotizar Proyecto
             </Button>

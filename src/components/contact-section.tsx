@@ -32,8 +32,20 @@ export default function ContactSection() {
   ];
 
   return (
-    <section id="contacto" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contacto" className="py-20 relative overflow-hidden">
+      {/* Background image with overlay */}
+      <div className="absolute inset-0 z-0">
+        <div 
+          className="w-full h-full bg-cover bg-center opacity-10"
+          style={{
+            backgroundImage: 'url(/media/diego.jpg)',
+            filter: 'grayscale(100%)',
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-white/90"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Contáctanos</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">

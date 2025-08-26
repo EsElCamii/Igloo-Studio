@@ -8,14 +8,17 @@ export default function HeroSection() {
     }
   };
   return (
-    <header
+    <section
       id="inicio"
+      aria-labelledby="main-heading"
       className="relative min-h-screen flex items-center overflow-hidden bg-white"
+      itemScope
+      itemType="https://schema.org/CreativeWork"
     >
       {/* Background Image - Horizontally flipped, positioned more to the left */}
       <div 
         className="
-          absolute top-0 right-0 
+          absolute top-0 right-10 
           h-full w-[60%] 
           bg-cover bg-center bg-no-repeat 
           hidden lg:block 
@@ -23,14 +26,14 @@ export default function HeroSection() {
           [transform:scaleX(-1)]
         " 
         style={{ 
-          backgroundImage: 'url("https://media.istockphoto.com/id/1193691523/photo/high-quality-condencer-microphone-with-clipping-path.jpg?s=612x612&w=0&k=20&c=EI9RvGYfCCZb1YUKHWLMcGY-ELpWEaM8zxXpXkto4BE=")'
+          backgroundImage: 'url("/media/upscalemedia-transformed.jpeg")'
         }}
       />
       {/* Mobile Background Image - Subtle */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat lg:hidden"
         style={{
-          backgroundImage: "url('https://media.istockphoto.com/id/1193691523/photo/high-quality-condencer-microphone-with-clipping-path.jpg?s=612x612&w=0&k=20&c=EI9RvGYfCCZb1YUKHWLMcGY-ELpWEaM8zxXpXkto4BE=')",
+          backgroundImage: "url('/media/upscalemedia-transformed.jpeg')",
           transform: "scaleX(-1)",
           opacity: "0.1",
         }}
@@ -40,21 +43,30 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-screen py-20">
           {/* Left Side - Content - More compact */}
           <article className="text-gray-900 space-y-6 lg:max-w-lg">
-            <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight text-black">
-                Estudios <span style={{ color: "#007FFF" }}>Igloo</span>
+            <header>
+              <h1 id="main-heading" className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight text-black">
+                <span itemProp="publisher" itemScope itemType="https://schema.org/Organization">
+                  <span itemProp="name">Estudios <span style={{ color: "#007FFF" }}>Igloo</span></span>
+                </span>
               </h1>
               {/* Split services into two lines for better fit */}
               <div className="text-lg md:text-xl font-light mb-4 text-gray-700 leading-relaxed">
                 <div>Producción Musical | Audio 3D</div>
                 <div>Realidad Aumentada | XR</div>
               </div>
-              <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-                Dirigido por el <strong className="text-black">Dr. Diego Iván Orozco</strong>,<br />
-                especialista en audio inmersivo y<br />
-                producción musical de vanguardia.
-              </p>
-            </div>
+            </header>
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed" itemProp="description">
+              Dirigido por el <strong itemProp="founder" itemScope itemType="https://schema.org/Person">
+                <span itemProp="honorificPrefix">Dr.</span> <span itemProp="givenName">Diego Iván</span> <span itemProp="familyName">Orozco</span>
+              </strong>,<br />
+              <span itemProp="founder" itemScope itemType="https://schema.org/Person">
+                <span itemProp="jobTitle">Especialista en audio inmersivo</span>
+              </span>
+              <br />
+              <span itemProp="about" itemScope itemType="https://schema.org/Thing">
+                <span itemProp="name">Producción musical de vanguardia</span>
+              </span>
+            </p>
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <Button
                 size="lg"
@@ -96,6 +108,6 @@ export default function HeroSection() {
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce" style={{ color: "#007FFF" }}>
         <Icon name="chevron-down" className="h-5 w-5" />
       </div>
-    </header>
+    </section>
   );
 }
