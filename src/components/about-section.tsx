@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icon";
+import DiegoImg from "../../media/Diego.jpg";
 
 const ProfileSwitcher = ({ isIvan, onSwitch }: { isIvan: boolean; onSwitch: () => void }) => {
   const handleSwitch = (toIvan: boolean) => {
@@ -118,14 +119,18 @@ export default function AboutSection() {
           {/* Left Column - Image */}
           <div className="relative">
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl bg-white p-2">
-              <img
-                src="/media/diego.jpg"
-                alt="Dr. Diego Iván Orozco - Fundador de Estudios Igloo"
-                className="w-full h-auto object-cover rounded-lg"
-                loading="eager"
-                width={600}
-                height={800}
-              />
+              <div className="w-full" style={{ aspectRatio: '3 / 4' }}>
+                <img
+                  src={showIvanProfile ? DiegoImg : "/media/background_2.jpg"}
+                  alt={showIvanProfile 
+                    ? "Dr. Diego Iván Orozco - Fundador de Estudios Igloo" 
+                    : "Estudios Igloo - Background"}
+                  className="w-full h-full object-cover rounded-lg"
+                  loading="eager"
+                  width={600}
+                  height={800}
+                />
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <div className="text-white">
                   <h3 className="text-2xl font-bold">Dr. Diego Iván Orozco</h3>

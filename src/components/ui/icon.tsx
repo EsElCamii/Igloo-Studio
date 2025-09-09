@@ -38,7 +38,7 @@ const Icon: React.FC<IconProps> = ({
 
   return (
     <i 
-      className={`${prefix} fa-${name} ${className}`} 
+      className={`${prefix} fa-${name} inline-flex items-center justify-center leading-none align-middle text-center ${className}`} 
       style={style}
       {...props}
     />

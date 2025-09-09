@@ -1,4 +1,4 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Icon } from "@/components/ui/icon";
 
 export default function ServicesSection() {
@@ -38,16 +38,20 @@ export default function ServicesSection() {
   return (
     <section id="servicios" className="py-20 relative overflow-hidden">
       {/* Background image with overlay */}
-      <div className="absolute inset-0 z-0">
+      <div className="fixed inset-0 -z-10 h-screen w-full">
         <div 
-          className="w-full h-full bg-cover bg-center opacity-10"
+          className="w-full h-full bg-cover bg-center"
           style={{
             backgroundImage: 'url(/media/background_2.jpg)',
-            filter: 'grayscale(100%)',
             backgroundAttachment: 'fixed',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            opacity: 0.3,
+            filter: 'grayscale(50%) contrast(1.1) brightness(1.1)'
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/70 to-white/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-white/80"></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -60,17 +64,17 @@ export default function ServicesSection() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-              <CardHeader>
+            <Card key={index} className="h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-white">
+              <CardHeader className="p-6">
                 <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-4">
                   {service.icon}
                 </div>
                 <CardTitle className="text-xl font-semibold text-gray-900">{service.title}</CardTitle>
               </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-600">
+              <CardContent className="p-6 pt-0">
+                <p className="text-sm text-gray-600">
                   {service.description}
-                </CardDescription>
+                </p>
               </CardContent>
             </Card>
           ))}
