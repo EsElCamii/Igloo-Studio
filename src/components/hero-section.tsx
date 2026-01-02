@@ -26,7 +26,10 @@ export default function HeroSection() {
           [transform:scaleX(-1)]
         " 
         style={{ 
-          backgroundImage: 'url("/media/upscalemedia-transformed.jpeg")'
+          backgroundImage: "url('/media/upscalemedia-transformed.jpeg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
         }}
       />
       {/* Mobile Background Image - Subtle */}

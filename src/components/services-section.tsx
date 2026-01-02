@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Icon } from "@/components/ui/icon";
+import { Link } from 'wouter';
 
 export default function ServicesSection() {
   const services = [
@@ -62,7 +63,33 @@ export default function ServicesSection() {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-8">
+          {/* Tall Equipment card that visually joins two cards vertically */}
+          <Link href="/equipment">
+            <Card className="group h-full md:row-span-2 relative overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-white">
+              <div className="absolute inset-0 bg-gradient-to-b from-blue-50/60 to-white/90 z-0" />
+              <CardHeader className="relative z-10 p-6">
+                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                  <Icon name="gamepad" className="w-8 h-8 text-blue-600" />
+                </div>
+                <CardTitle className="text-2xl font-bold text-gray-900">Equipamiento</CardTitle>
+              </CardHeader>
+              <CardContent className="relative z-10 p-6 pt-0 flex flex-col gap-4">
+                <p className="text-sm text-gray-600">
+                  Explora nuestro estudio: micrófonos, interfaces, monitores, instrumentos y más. 
+                  Conoce el detalle de cada equipo que utilizamos para lograr resultados profesionales.
+                </p>
+                <span className="inline-flex items-center text-blue-600 font-medium">
+                  Ver equipamiento
+                  <i className="fas fa-chevron-right ml-2 text-xs" />
+                </span>
+              </CardContent>
+              <div className="absolute -right-6 -bottom-6 opacity-20 group-hover:opacity-30 transition-opacity">
+                <Icon name="headphones" className="w-40 h-40 text-blue-600" />
+              </div>
+            </Card>
+          </Link>
+          
           {services.map((service, index) => (
             <Card key={index} className="h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-white">
               <CardHeader className="p-6">

@@ -121,10 +121,10 @@ export default function AboutSection() {
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl bg-white p-2">
               <div className="w-full" style={{ aspectRatio: '3 / 4' }}>
                 <img
-                  src={showIvanProfile ? DiegoImg : "/media/background_2.jpg"}
+                  src={showIvanProfile ? DiegoImg : "/media/desktop-photo-studio.jpg"}
                   alt={showIvanProfile 
                     ? "Dr. Diego Iván Orozco - Fundador de Estudios Igloo" 
-                    : "Estudios Igloo - Background"}
+                    : "Estudios Igloo - Espacio de grabación profesional"}
                   className="w-full h-full object-cover rounded-lg"
                   loading="eager"
                   width={600}
