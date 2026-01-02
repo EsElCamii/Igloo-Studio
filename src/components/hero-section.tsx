@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icon";
+import heroImage from "../../media/upscalemedia-transformed.jpeg";
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -15,32 +16,25 @@ export default function HeroSection() {
       itemScope
       itemType="https://schema.org/CreativeWork"
     >
-      {/* Background Image - Horizontally flipped, positioned more to the left */}
-      <div 
-        className="
-          absolute top-0 right-10 
-          h-full w-[60%] 
-          bg-cover bg-center bg-no-repeat 
-          hidden lg:block 
-          opacity-70
-          [transform:scaleX(-1)]
-        " 
-        style={{ 
-          backgroundImage: "url('/media/upscalemedia-transformed.jpeg')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      />
-      {/* Mobile Background Image - Subtle */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat lg:hidden"
-        style={{
-          backgroundImage: "url('/media/upscalemedia-transformed.jpeg')",
-          transform: "scaleX(-1)",
-          opacity: "0.1",
-        }}
-      />
+      {/* Full-width background image, flipped horizontally and anchored bottom/right */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div
+          className="
+            absolute inset-0 w-full h-full
+            bg-no-repeat bg-cover
+            opacity-60 pointer-events-none select-none
+          "
+          style={{
+            backgroundImage: `url(${heroImage})`,
+            backgroundPosition: "right bottom",
+            transform: "scaleX(-1) scale(0.95)",
+            transformOrigin: "center",
+            marginLeft: "3rem",
+            marginTop: "1.5rem",
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-l from-white/35 via-white/10 to-transparent" />
+      </div>
       {/* Content Container - Split Layout */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-screen py-20">
@@ -103,8 +97,8 @@ export default function HeroSection() {
               </Button>
             </div>
           </article>
-          {/* Right Side - Space for microphone image (more visible now) */}
-          <div className="hidden lg:block"></div>
+          {/* Right Side - reserved spacing for layout balance */}
+          <div className="hidden lg:block" />
         </div>
       </div>
       {/* Scroll Indicator */}

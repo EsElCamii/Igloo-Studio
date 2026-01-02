@@ -25,7 +25,7 @@ const projects: Project[] = [
     title: 'Bosque Sonoro VR',
     description: 'Experiencia de audio inmersivo para realidad virtual',
     category: 'Audio 3D',
-    image: 'https://images.unsplash.com/photo-1593508512255-86ab42a0e620?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1478&q=80',
+    image: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1470&q=80',
     link: '/proyecto/2'
   },
   {

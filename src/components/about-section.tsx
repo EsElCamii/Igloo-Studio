@@ -2,6 +2,7 @@ import { useState, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icon";
 import DiegoImg from "../../media/Diego.jpg";
+import DeskImg from "../../media/desktop-photo-studio.jpg";
 
 const ProfileSwitcher = ({ isIvan, onSwitch }: { isIvan: boolean; onSwitch: () => void }) => {
   const handleSwitch = (toIvan: boolean) => {
@@ -121,7 +122,7 @@ export default function AboutSection() {
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl bg-white p-2">
               <div className="w-full" style={{ aspectRatio: '3 / 4' }}>
                 <img
-                  src={showIvanProfile ? DiegoImg : "/media/desktop-photo-studio.jpg"}
+                  src={showIvanProfile ? DiegoImg : DeskImg}
                   alt={showIvanProfile 
                     ? "Dr. Diego Iván Orozco - Fundador de Estudios Igloo" 
                     : "Estudios Igloo - Espacio de grabación profesional"}

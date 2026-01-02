@@ -40,7 +40,7 @@ export default function ProjectDetail() {
       category: "3d",
       title: "Experiencia VR \"Bosque Sonoro\"",
       subtitle: "Audio espacial inmersivo",
-      image: "https://images.unsplash.com/photo-1592478411213-6153e4ebc696?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+      image: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1400&q=80",
       videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
       date: "2024",
       client: "Museo de Ciencias Naturales",
